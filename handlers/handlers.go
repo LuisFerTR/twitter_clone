@@ -5,6 +5,8 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/LuisFerTR/twitter_clone/middlew"
+	"github.com/LuisFerTR/twitter_clone/routers"
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
 )
@@ -14,6 +16,8 @@ import (
 func Handlers() {
 	// Controlará los status que devuelvan las URL
 	router := mux.NewRouter()
+
+	router.HandleFunc("/signup", middlew.CheckDB(routers.SignUp)).Methods("POST")
 
 	PORT := os.Getenv("PORT")
 
