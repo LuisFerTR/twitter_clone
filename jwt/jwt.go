@@ -3,9 +3,8 @@ package jwt
 import (
 	"time"
 
-	jwt "github.com/dgrijalva/jwt-go"
-
 	"github.com/LuisFerTR/twitter_clone/models"
+	"github.com/dgrijalva/jwt-go"
 )
 
 // GenerateJWT generates JWT
