@@ -31,7 +31,7 @@ func SearchProfile(ID string) (models.User, error) {
 
 	if err != nil {
 		log.Println("Profile not found " + err.Error())
-		return profile, err
+		return models.User{}, err
 	}
 
 	return profile, nil

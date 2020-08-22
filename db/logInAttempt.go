@@ -16,7 +16,7 @@ func LogInAttempt(email string, password string) (models.User, bool) {
 	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password))
 
 	if err != nil {
-		return user, false
+		return models.User{}, false
 	}
 
 	return user, true
